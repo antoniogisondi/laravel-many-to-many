@@ -29,7 +29,8 @@ class StoreProjectRequest extends FormRequest
             'inizio_progetto'   => 'required|date_format:Y-m-d',
             'consegna_progetto' => 'required|date_format:Y-m-d',
             'img'               => 'image|max:250',
-            'type_id'           => 'required|exists:types,id'
+            'type_id'           => 'required|exists:types,id',
+            'technology_id'     => 'exists:technologies,id',
         ];
     }
 
@@ -46,7 +47,8 @@ class StoreProjectRequest extends FormRequest
             'img.image'                     => 'Il formato dell\' immagine dev\'essere di tipo jpg, jpeg, webp, png',
             'img|max'                       => 'L\' immagine deve essere lunga al massimo :max caratteri',
             'type_id.required'              => 'Selezionare una tipologia di progetto',
-            'type_id.exists'                => 'La tipologia selezionata non è esistente'
+            'type_id.exists'                => 'La tipologia selezionata non è esistente',
+            'technology_id.exists'          => 'Tecnologia selezionata non valida'
         ];
     }
 }

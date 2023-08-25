@@ -45,6 +45,17 @@
                                 </select>
                             </div>
                             <div class="form-group mb-3">
+                                <p>Seleziona le tecnologie</p>
+                                @foreach ($technologies as $tech)
+                                    <input type="checkbox" class="form-control-check" id="" name="technologies []">
+                                    <label class="form-control-label">{{ $tech->technology_name }}</label>
+                                @endforeach
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="description" class="form-label">Inserisci descrizione per le tecnologie utilizzate</label>
+                                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Inserisci la descrizione della tecnologia del progetto">{{ old('description')}}</textarea>
+                            </div>
+                            <div class="form-group mb-3">
                                 <label for="inizio_progetto" class="form-label">Data di inizio</label>
                                 <input type="text" class="form-control" id="inizio_progetto" name="inizio_progetto" placeholder="Inserisci la data di inizio" value="{{ old('inizio_progetto')}}">
                             </div>
