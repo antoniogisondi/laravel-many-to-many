@@ -43,6 +43,14 @@
                                         Il progetto è scaduto
                                     @endif
                                 </li>
+
+                                @if ($project->technologies )
+                                    <li><strong>Tecnologie utilizzate: </strong><br>
+                                        @foreach ($project->technologies as $tech)
+                                            <a href="#" class="badge text-bg-warning text-decoration-none">{{$tech->technology_name}}</a>
+                                        @endforeach
+                                    </li>
+                                @endif
                             </ul>
                         </div>
 

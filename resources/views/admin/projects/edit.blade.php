@@ -52,6 +52,13 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <div class="form-group mb-3">
+                                <p>Seleziona le tecnologie</p>
+                                @foreach ($technologies as $tech)
+                                    <input type="checkbox" class="form-control-check" value="{{ $tech->id }}" name="technologies[]" {{ $project->technologies->contains($tech) ? 'checked' : ''}}>
+                                    <label class="form-control-label">{{ $tech->technology_name }}</label>
+                                @endforeach
+                            </div>
                             <div class="mb-3">
                                 <label for="inizio_progetto" class="form-label">Inserisci la data di inizio</label>
                                 <input type="text" class="form-control" id="inizio_progetto" placeholder="Inserisci la data di inizio" name="inizio_progetto" value="{{ old('inizio_progetto') ?? $project->inizio_progetto}}">

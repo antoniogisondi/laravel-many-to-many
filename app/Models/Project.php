@@ -26,9 +26,9 @@ class Project extends Model
          *
          * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
          */
-        public function technologies(): BelongsToMany
+        public function technologies()
         {
-            return $this->belongsToMany(Technology::class);
+            return $this->belongsToMany(Technology::class); 
         }
 }
 
