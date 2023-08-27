@@ -15,5 +15,13 @@
                 </a>
             </strong>
         </li>
+
+        <li class="nav-item">
+            <strong>
+                <a class="nav-link text-black {{ Route::currentRouteName() == 'admin.technologies.index' ? 'bg-secondary' : ''}}" href="{{ route('admin.technologies.index')}}">
+                    Tecnologie
+                </a>
+            </strong>
+        </li>
     </ul>
 </nav>
