@@ -47,7 +47,7 @@
                             <div class="form-group mb-3">
                                 <p>Seleziona le tecnologie</p>
                                 @foreach ($technologies as $tech)
-                                    <input type="checkbox" class="form-control-check" id="" name="technologies []">
+                                    <input type="checkbox" class="form-control-check" value="{{ $tech->id }}" name="technologies[]" {{ in_array($tech->id , old('technologies', [])) ? 'checked' : ''}}>
                                     <label class="form-control-label">{{ $tech->technology_name }}</label>
                                 @endforeach
                             </div>

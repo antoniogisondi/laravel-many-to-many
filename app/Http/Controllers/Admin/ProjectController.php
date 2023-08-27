@@ -44,7 +44,7 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $form_data = $request->all();
-        
+        dd($form_data);
         $project = new Project();
 
         if($request->hasFile('img')){
@@ -54,6 +54,10 @@ class ProjectController extends Controller
         }
         $project->fill($form_data);
         $project->save();
+        
+        if ($request->has('technologies')) {
+            $project->technologies()->sync($request->technologies);
+        }
 
         return redirect()->route('admin.projects.show', $project->id);
     }
