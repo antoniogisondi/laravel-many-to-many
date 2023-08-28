@@ -50,6 +50,8 @@
                                             <a href="#" class="badge text-bg-warning text-decoration-none">{{$tech->technology_name}}</a>
                                         @endforeach
                                     </li>
+                                @else
+                                    <p>Tecnologia non specificata</p>
                                 @endif
                             </ul>
                         </div>

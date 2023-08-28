@@ -8,7 +8,7 @@
             <div class="col-12">
                 <div class="card mt-5">
                     <div class="card-header">
-                        <h3>Crea il tuo la tua tecnologia</h3>
+                        <h3>Crea la tua tecnologia</h3>
                     </div>
 
                     <div class="card-body">
@@ -21,11 +21,11 @@
                                 </ul>
                             </div>
                         @endif
-                        <form action="{{ route('admin.technologies.store')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.technologies.store')}}" method="POST">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="titolo" class="form-label">Inserisci il nome</label>
-                                <input type="text" class="form-control" id="technology_name" name="technology_name" placeholder="Inserisci il nome della tecnologia" value="{{ old('titolo')}}">
+                                <input type="text" class="form-control" id="technology_name" name="technology_name" placeholder="Inserisci il nome della tecnologia" value="{{ old('technology_name')}}">
                             </div>
 
                             <div class="form-group submit mb-3">
